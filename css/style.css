@@ -1,0 +1,23 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cards a {
+  text-align: center;
+  justify-items: center;
+}
+
+.cards {
+  width: 200px;
+  height: 300px;
+  border: solid black 1px;
+  padding: 2rem;
+  text-align: center;
+  align-self: center;
+  margin: 1rem;
+}
