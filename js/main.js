@@ -1,27 +1,36 @@
-const token = 'asybMQo0JI7AeVcuov3p';
-const url = 'https://the-one-api.dev/v2/movie';
+const url =
+  'https://ddragon.leagueoflegends.com/cdn/11.4.1/data/en_US/champion.json';
 
-async function getBooks() {
+async function getChampions() {
   try {
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(url);
     const data = await response.json();
-    const results = data.docs;
-    console.log(results);
+    const result = data.data;
+    console.log(result);
 
-    for (let i = 0; i < results.length; i++) {
+    const championList = Object.values(data.data);
+    console.log(championList);
+
+    for (let i = 0; i < championList.length; i++) {
       document.querySelector('main').innerHTML += `
       <div class="cards">
-        <a href="${results[i]._id}">${results[i].name}</a>
+        <div class="card">
+            <img src="http://ddragon.leagueoflegends.com/cdn/11.4.1/img/champion/${championList[i].image.full}">
+            <h1>${championList[i].name}</h1>
+            <p>${championList[i].title}</p>
+            <p>${championList[i].partype}</p>
+            <div class="card-button">
+            <a href="details.html?id=${championList[i].id}">Read More</a>
+            </div>
         </div>
-        `;
+      </div>
+      
+      
+      `;
     }
   } catch (error) {
     console.log(error);
   }
 }
 
-getBooks();
+getChampions();
