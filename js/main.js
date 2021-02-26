@@ -14,6 +14,10 @@ async function getChampions() {
     console.log(championList);
 
     for (let i = 0; i < championList.length; i++) {
+      // Had to put a stop at Kayn or else it would have fetched 150+ characters at once.
+      if (championList[i].name === 'Kayn') {
+        break;
+      }
       container.innerHTML += `
       <div class ="container">
       <div class="cards">
@@ -28,8 +32,6 @@ async function getChampions() {
         </div>
       </div>
       </duv>
-      
-      
       `;
     }
   } catch (error) {
