@@ -7,10 +7,34 @@
   font-family: 'poppins', sans-serif;
 }
 
-main {
-  display: flex;
+#characters {
+  display: none;
+  /* Display: flex is in function showCharacters */
   flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+header {
+  display: flex;
   justify-content: center;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin-top: 2rem;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+
+.withDivider {
+  border-right: 1px solid black;
+  margin-right: 2px;
+  padding-right: 9px;
 }
 
 .header {
@@ -19,12 +43,11 @@ main {
 }
 
 .cards {
-  width: 460px;
+  width: 400px;
   height: 350px;
   margin: 2rem;
   border: solid black 1px;
   border-radius: 10px;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -47,9 +70,10 @@ p {
 
 /*Details */
 
-.champion-details {
+#champion-details {
   text-align: center;
   margin-top: 5rem;
+  display: none;
 }
 
 .champion-info {
@@ -64,6 +88,7 @@ p {
 .btn {
   text-align: center;
   margin: auto;
+  padding: 5rem;
 }
 
 .allytips,
@@ -91,4 +116,46 @@ p {
 
 .bold {
   font-weight: bold;
+}
+
+#loading {
+  display: block;
+  margin: auto;
+}
+
+/* Form */
+
+.form-container {
+  margin-top: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+#name,
+#subject,
+#email,
+#adress {
+  margin: 1px;
+  justify-self: center;
+  height: 40px;
+}
+
+.form-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: black;
+  margin-top: 0.1rem;
 }

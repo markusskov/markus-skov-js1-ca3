@@ -4,7 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Contact</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="withDivider">Champions</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 class="header">League of Legends</h1>
+      <div class="form-container">
+        <form action="" id="contactForm">
+          <div class="form-error" id="nameError">First name is required</div>
+          <input type="text" id="name" placeholder="Name (required)" />
+          <div class="form-error" id="subjectError">
+            Subject must have a minimum length of 10 characters
+          </div>
+          <input
+            type="text"
+            id="subject"
+            placeholder="Subject (min 10 characters)"
+          />
+          <div class="form-error" id="emailError">
+            Enter a valid email adress
+          </div>
+          <input type="text" id="email" placeholder="Email" />
+          <div class="form-error" id="adressError">
+            Adress must have a minimum length of 25 characters
+          </div>
+          <input
+            type="text"
+            id="adress"
+            placeholder="Adress (min 25 characters)"
+          />
+
+          <button>Submit</button>
+        </form>
+      </div>
+    </main>
+    <script src="js/form.js"></script>
+  </body>
 </html>

@@ -1,6 +1,8 @@
 const url =
   'https://ddragon.leagueoflegends.com/cdn/11.4.1/data/en_US/champion.json';
 
+const container = document.getElementById('characters');
+
 async function getChampions() {
   try {
     const response = await fetch(url);
@@ -12,7 +14,8 @@ async function getChampions() {
     console.log(championList);
 
     for (let i = 0; i < championList.length; i++) {
-      document.querySelector('main').innerHTML += `
+      container.innerHTML += `
+      <div class ="container">
       <div class="cards">
         <div class="card">
             <img src="http://ddragon.leagueoflegends.com/cdn/11.4.1/img/champion/${championList[i].image.full}">
@@ -24,13 +27,32 @@ async function getChampions() {
             </div>
         </div>
       </div>
+      </duv>
       
       
       `;
     }
   } catch (error) {
+    container.innerHTML += `
+    <div class ="container">
+    <p> Oooops, looks like we can't connect to our API! </p>
+    </div>
+    `;
     console.log(error);
   }
 }
 
 getChampions();
+
+// Loading GIF
+
+const loading = function () {
+  loading = setTimeout(showCharacters, 2000);
+};
+loading();
+
+function showCharacters() {
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('characters').style.display = 'flex';
+}
+showCharacters();
